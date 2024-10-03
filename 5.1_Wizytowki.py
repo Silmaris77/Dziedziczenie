@@ -8,8 +8,16 @@ class Kontakty:
          self.last_name = last_name
          self.address = address
          self.e_mail = e_mail
+                      
     def __str__(self):
         return f'{self.first_name} {self.last_name} {self.e_mail}'
+
+    def contact(self):
+        print(f"Kontaktuję się z {self.first_name} {self.last_name}, {self.e_mail}")
+
+    @property
+    def name_length(self):
+        return len(self.first_name) + len(self.last_name) + 1 
 
 dane = []
 
@@ -32,3 +40,7 @@ print("Kontakty posortowane według e-mail:")
 for i in dane_by_email:
     print(i)
 print("-" * 10)
+
+for i in dane:
+    i.contact()
+    print(f"Długość znaków na imię i nazwisko to: {i.name_length}")
